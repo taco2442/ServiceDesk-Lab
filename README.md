@@ -27,7 +27,7 @@ We can now create the Virtual Machines our environment will take place in.
 * In virtual box select New. Set Name to DomainController and version to Windows 2016 (64-bit)
 * It is important to leave the ISO image blank as adding it now will cause errors later
 
-![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/fdba54ed-13dd-40ab-a3ca-4f91f1ada4fa)
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/fdba54ed-13dd-40ab-a3ca-4f91f1ada4fa)</br>
 
 * Type an easy to remember Username and Password. There isn't as much of a need to worry about security here as this is just a lab
 
@@ -35,12 +35,14 @@ Hardware/Virtual Hard disk:
 * For hardware and virtual hard disk these options don't matter too much as long as you are allocating enough space. If the default options are too much it is ok to downsize them. When you are done click Finish.
 
 * Now we can right click our VM we just created and select settings. Go to storage and select the empty disk. Now we can select our Windows server 2016 ISO from the drop down on the right and hit OK.
+
 <br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/b1b3a6bf-3f4b-48f5-8c6f-f7ff44183d83)</br>
 
 <br><b>ClientPC</b></br>
 <br>Follwing a similar process we can now make the ClienPC</br>
-* In virtual box select New. Set Name to ClientPC and select the Windows 10 ISO
-<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/b1e417b8-c82b-4376-bb15-b8ee1b456710)</br>
+* In virtual box select New. Set Name to ClientPC and leave ISO blank
+  
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/8ca132e3-0c5e-4319-8b36-369c56166d84)</br>
 
 * Follow the same steps to create an easy to remember Username/Password. Select the Hardware/Virtual Hard disk options you wish to allocate for this lab. Click Finish when done.
 
@@ -69,12 +71,21 @@ Server Manager should start on its own. If not you can hit the windows key and s
 * Select Next until we Install (Ignore warnings for Prerequisities check)[The PC will restart]
 
 ## Client PC
-Running the VM ClientPC will prompt you with Installation options
+Once started you will be prompted with the VM failed to boot (this is fine)
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/84b9e443-6171-41d3-b134-7ec0300e6bcd)</br>
+We need to open the drop down menu and select Windows 10 ISO
+
+<br>Running the VM ClientPC will prompt you with Installation options</br>
 <br>Follow the options:</br>
+* Install Now
 * I don't have a product key
-* Windows 10 pro
-* Custom Install
-* After Install has finished you can choose a password for your administrator account
+* Windows 10 Pro
+* Accept and Next
+* Custom Install and Next
+
+<br>Now we are in the personalization stage of setting up windows</br>
+<br>For these options we can keep them as default by selecting Yes, Next or Skip</br>
+
 
 
 
