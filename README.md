@@ -58,7 +58,11 @@ Server Manager should start on its own. If not you can hit the windows key and s
 
 * Click Next through the options until you get to Server Roles
 * Select Active Directory Domain Services and then Add Features
-
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/b1c1e02f-23e1-4cb4-8b3d-3b9c02342f80)</br>
+* After that we are done with options and you can continue selecting Next until you Install
+* Once finished we need to Promote this server to a domain controller. We will also need to Add a new forest and set Root domain name to ServiceDesk.com.
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/ec17de7d-f197-4ddd-80cc-ee226143d1de)
+</br>
 
 ## Client PC
 
