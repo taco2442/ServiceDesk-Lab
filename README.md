@@ -2,7 +2,7 @@
 In this Lab, I will be going over how to set up a Service Desk environment to allow users to get hand on experience. We will go over the set up portion of how we can have two VM's (Domain Controller and ClienPC) in Virtual box. We will also explore Active Directory in creating a better hierarchy for a new company and managing the new users associated with that. 
 <br>After the lab is over you will having some knowledge in the following: </br>
 * Virtual box
-* Active Directory - Adding/Deleting Users, Password Resets, Group/Role Policy
+* Active Directory - Adding/Deleting Users, Password Resets, Group Policy
 * Configuring a Domain Controller
 * Windows server 2016
 * Networking and DNS
@@ -162,10 +162,10 @@ Congratulations you made it through setting up the environment. Now you can acce
 
 ## Active Directory
 <b>Reformatting a office</b>
-<br>Suppose we have a newer organization that we need to set up in Active Directory. This means that we will need to do a lot of overhead work to make sure that all new users have been added with the right groups and roles added accordingly. We might also encounter scenarios in this setting that would require us to change usernames because of name changes, disable/delete accounts of users that have left the company and change where people might be situated within the company. There is a lot to do in Active Directory and we will now be going over some of the problems that one might face.</br>
+<br>Suppose we have a newer organization that we need to set up in Active Directory. This means that we will need to do a lot of overhead work to make sure that all new users have been added with the right group policy added accordingly. We might also encounter scenarios in this setting that would require us to change usernames because of name changes, disable/delete accounts of users that have left the company and change where people might be situated within the company. There is a lot to do in Active Directory and we will now be going over some of the problems that one might face.</br>
 <br>We will be going over: </br>
 * Account Lockouts/Password Reset
-* Group Policy/Roles Managemnet
+* Group Policy
 * Assinging users to new Organizational Units
 * Account Disable/Deletion
 * Username Changes
@@ -194,7 +194,7 @@ Ex.
 <br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/bc7bf7da-bcbf-4698-8589-951be0442109)</br>
 <br>Now even though most of the accounts only have basic user permissions we are much more equiped and organized to manage these accounts.</br>
 
-<b>Group Policy/Role Management</b>
+<b>Group Policy</b>
 <br>We will go over how to create new Group and Roles for better cybersecurity health.</br>
 * In Server Manager right click tools, select Group Policy Management
 
@@ -212,6 +212,20 @@ Now we are in the area where we can change account lockout settings
 <br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/996ff2da-391c-4580-8fde-e79723349480)</br>
 The other options will automatically change to 30 min lockout duration.
 <br>Now we have a new lockout policy to lock users out of their accounts once they have failed 5 log in attempts and set the lockout duration to 30 minutes.</br>
+<br>to set up a new policy to stop HR from accessing Task Manager: </br>
+* In Server Manager, Tools, Group Policy Managemnet
+* Navigate to Group Policy Objects and create a new GPO called Task Manager
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/ddf15b09-eaa6-44fb-9b36-b07fb78ec53c)</br>
+* Righ click Task Manager and select Edit
+* Navigate to Ctrl+Alt+Del options, User Configuration/Administrative Templates/System
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/4ef16123-a56e-4a10-815d-f3d012cb6378)</br>
+* Double click Remove Task Manager, select enabled and hit Apply and OK
+* Drag and drop Task Manager to our HR OU
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/f24160f7-5171-421f-b667-e3d6db52b0f0)</br>
+<br>Now HR has a new GPO that makes it so they can not access Task Manager on their devices</br>
 
 <b>Account Lockouts</b>
 <br>One of the most common problems is Account lockouts and having to reset passwords.</br>
@@ -248,7 +262,15 @@ The other options will automatically change to 30 min lockout duration.
 
 <b>Username Changes</b>
 <br>Sometimes you might have to change the name of a user within the company.</br>
+* Right click the user and select Properties
+* Here we can change name, display name and other descriptions about the person
 
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/69ea1d3b-d72d-4ba2-8db9-1ed3bf48d63a)</br>
+
+## Conclusion
+<br>In this tutorial we went over many different topics in VM, AD and different policies. We covered the setup portion of how to download and install various software to have a working AD environment. In AD we went over how a possible service desk personnel can reset passwords, unlock accounts and create new users. Now that you have your own lab setup you should be able to experiment within AD however you see fit. Good Luck!</br>
+
+<br>If you have made it through the whole tutorial congratulations. You should now have a much better understanding of Active Directory and how to set up environments in Virtual box. </br>
 
 
 
