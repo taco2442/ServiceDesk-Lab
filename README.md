@@ -5,6 +5,7 @@ After the lab is over you will having some knowledge in the following:
 * Active Directory - Adding/Deleting Users, Password Resets, Group/Role Policy
 * Configuring a Domain Controller
 * Windows server 2016
+* Networking and DNS
 
 ## Setup
 For this lab you will need to download and install the latest version of Virtual box
