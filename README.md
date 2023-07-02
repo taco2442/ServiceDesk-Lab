@@ -165,7 +165,7 @@ Congratulations you made it through setting up the environment. Now you can acce
 <br>Suppose we have a newer organization that we need to set up in Active Directory. This means that we will need to do a lot of overhead work to make sure that all new users have been added with the right groups and roles added accordingly. We might also encounter scenarios in this setting that would require us to change usernames because of name changes, disable/delete accounts of users that have left the company and change where people might be situated within the company. There is a lot to do in Active Directory and we will now be going over some of the problems that one might face.</br>
 <br>We will be going over: </br>
 * Account Lockouts/Password Reset
-* Creating new Group/Roles
+* Group Policy/Roles Managemnet
 * Assinging users to new Organizational Units
 * Account Disable/Deletion
 * Username Changes
@@ -194,17 +194,61 @@ Ex.
 <br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/bc7bf7da-bcbf-4698-8589-951be0442109)</br>
 <br>Now even though most of the accounts only have basic user permissions we are much more equiped and organized to manage these accounts.</br>
 
+<b>Group Policy/Role Management</b>
+<br>We will go over how to create new Group and Roles for better cybersecurity health.</br>
+* In Server Manager right click tools, select Group Policy Management
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/43a19e47-a4fb-4da6-8519-e4ccb6aca6a8)</br>
+* Go to Default Domain Policy
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/5fadd529-cbe9-44e7-b1eb-3383f761277a)</br>
+* Right click Default Domain Policy, Select Edit
+* Navigate down to Account Lockout Policies. Computer Configuration, Windows Settings, Security Settings, Account Policies, Lockout Policy
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/b77ee045-ae34-4fa9-83fc-9368e984c1e0)</br>
+Now we are in the area where we can change account lockout settings
+* Open Lockout threshold and change the attempts to 5
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/996ff2da-391c-4580-8fde-e79723349480)</br>
+The other options will automatically change to 30 min lockout duration.
+<br>Now we have a new lockout policy to lock users out of their accounts once they have failed 5 log in attempts and set the lockout duration to 30 minutes.</br>
+
 <b>Account Lockouts</b>
 <br>One of the most common problems is Account lockouts and having to reset passwords.</br>
+* On our ClientPC you will need to lock the account through failed passwords
+  
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/1aa6ba2f-014f-4bdc-a764-31681b33ebb2)</br>
+* Open the OU that contains the account you locked out. For me I used an account in IT.
+* Right click and select Properties
+* Select Unlock Account and Apply
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/f813822b-75cb-4a6f-896e-f92ab016aa1c)</br>
+
+<b>Reset Password</b>
+* Right click User and select Reset Password
+<br>Here we can change passwords as well as unlocking the users account from here</br>
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/d6a060c8-7992-4647-9420-a5c9675cd3e0)</br>
+<br>This process can become more difficult as the number of users increases. A good practice to follow is using Find... and chang Directories to the desired OU if known or using the Entire Directory tab</br>
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/59352997-41e9-4b21-b048-1f524608aa29)</br>
 
 <b>Account Disable/Deletion</b>
 <br>People will eventually leave the company and we must know how to deal with their account in that scenario or have a need to disable the account.</br>
+1. User is on a paid leave which will last 3 weeks and we must go and disable the account until they return.
+* In the Find search option change directories to Entire Directory and search desired name
+* Right click the account and select Disable Account
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/6e2d7bf6-0281-42f0-9a22-57086b88644a)</br>
+2. User has been fired from the company and we must remove the account
+* In the Find search option change directories to Entire Directory and search desired name
+* Right click the account and select Delete
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/3224c504-1f78-45d3-a515-c62e31e92e25)</br>
 
 <b>Username Changes</b>
 <br>Sometimes you might have to change the name of a user within the company.</br>
 
-<b>Creating new Group/Roles</b>
-<br>We will go over how to create new Group and Roles for better cybersecurity health.</br>
 
 
 
