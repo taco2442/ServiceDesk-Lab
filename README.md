@@ -1,11 +1,10 @@
 ## Introduction
-In this Lab, I will be going over how to set up a Service Desk environment to allow users to get hand on experience. We will  set up two VM's in Virtual box (one for the Domain Controller and one for the clientPC) this will allow us to access the DC from a seperate PC. We will also experiment with Jira ticketing system and get familiar with tickets.
+In this Lab, I will be going over how to set up a Service Desk environment to allow users to get hand on experience. How we will convert IP addresses into Static IP addresses We will  set up two VM's in Virtual box (one for the Domain Controller and one for the clientPC) this will allow us to access the DC from a seperate PC. 
 After the lab is over you will having some knowledge in the following:
 * Virtual box
 * Active Directory - Adding/Deleting Users, Password Resets, Group/Role Policy
 * Configuring a Domain Controller
 * Windows server 2016
-* Jira Ticketing system
 
 ## Setup
 For this lab you will need to download and install the latest version of Virtual box
@@ -70,6 +69,32 @@ Server Manager should start on its own. If not you can hit the windows key and s
 * For the NetBIOS domain name set it to SERVICEDESK
 * Select Next until we Install (Ignore warnings for Prerequisities check)[The PC will restart]
 
+<b>Now we are going to give the Domain Controller a static IP address</b>
+<br>To do this click on the windows start button in the bottom right and type cmd</br>
+* Open Command prompt
+* Type ipconfig into the terminal
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/cf4f7357-3661-4999-9e6e-1fb9b9148256)</br>
+Now we can take that IP address and make our Domain Controller have a static IP address
+<br>To open the Control Panel use the same process as you did to open Command prompt by clicking the bottom right windows start icon and typing Control Panel</br>
+* Under Network and Internet select View network status and tasks
+* On the left side select Change Adapter Settings
+* Open Ethernet
+* Open Properties
+* Open Internet Protocol Version 4(TCP/IPv4)
+  
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/3e823ceb-18de-46ed-a63d-94a6d3a86d43)</br>
+<br>We can easily plug in the information we got from using ipconfig</br>
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/9edbc8c6-6c90-479e-b038-f971c6b8524e)</br>
+* click OK and close
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/895c5477-0f6d-456e-b415-b820ed2bdd7c)</br>
+* At the top of the VM under Devices, Under Network, Click network settings
+  
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/0ac1bf57-c85e-4989-977f-98a55b4ad40b)</br>
+* Changed Attached to: Host-only Adapter
+
+
 ## Client PC
 Once started you will be prompted with the VM failed to boot (this is fine)
 <br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/84b9e443-6171-41d3-b134-7ec0300e6bcd)</br>
@@ -85,8 +110,51 @@ We need to open the drop down menu and select Windows 10 ISO
 
 <br>Now we are in the personalization stage of setting up windows</br>
 <br>For these options we can keep them as default by selecting Yes, Next or Skip</br>
+* Choose the name you want the PC to have and skip setting a password
+* Finish last personalization steps of setting up windows (this won't affect you later in the lab)
+
+<br><b>Before we can change anything or add ourselves to the Domain Controller we must make ourselves an administrator of the ClientPC</b></br>
+<br>To do this: </br>
+* Open File explorer and right click This PC, In the drop down select Manage
+* In Computer Management Select Local Users and Groups
+* Open Users, right click administrators and select propteries
+  
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/a8d81fa2-2d13-4f0a-86dd-b286013e71b3)</br>
+* Check Account is disabled and Apply
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/738f1c63-cfdb-4fd6-8702-198e6ac0c30a)</br>
+Now the account has been enabled
+* now we can right click Administrator and Set password
+* Afterwards sign out of the VM and log in as the new administrator account
 
 
+<br><b>Now we will Change the Name, Domain and IP address of the ClientPC</b></br>
+First you will need to change your IP address
+* Open Control Panel
+* Under Network and Internet select View network status and tasks
+* On the left side select Change Adapter Settings
+* Open Ethernet
+* Open Properties
+* Open Internet Protocol Version 4(TCP/IPv4)
+  
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/ce4ec0b5-c1e3-45d9-a447-16e46a72e6e4)</br>
+<br>Now both our Domain Controller and ClientPC have static IP addresses and we are almost ready to communicate between them</br>
 
+* At the top of the VM select Devices, Network, Network settings
+* Once Open we can switch to Attached to: Host-only Adapter
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/b579411e-9da5-49fa-83af-2d69ad4b3798)</br>
+
+* Open File explorer, Right click on This PC and select Properties
+  
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/4daa5ae2-5ada-4351-9102-389de3b364fd)</br>
+* Scroll down to Rename this PC (advanced)
+* Under To rename this computer... select Change
+* Select Domain: ServiceDesk.com
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/614bff1f-5a7a-4274-a646-12e7d4e4cdbb)</br>
+* enter the username and password you created for the admin account
+
+<br>Now you should be able to see your desktop under Computers in your Domain Controller</br>
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/cde2a6e5-df5e-4e47-a5f0-7b03e85ae5fc)</br>
 
 ## Active Directory
