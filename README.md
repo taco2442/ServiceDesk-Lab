@@ -157,4 +157,7 @@ First you will need to change your IP address
 <br>Now you should be able to see your desktop under Computers in your Domain Controller</br>
 <br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/cde2a6e5-df5e-4e47-a5f0-7b03e85ae5fc)</br>
 
+Congratulations you made it through setting up the environment. Now you can access your Domain Controller from a seperate VM. In the next section we will go over Active Directory and how we can start dealing with user passwords, Group/Role policy and other problems one might face in a help desk environment. 
+
 ## Active Directory
+to be con.
