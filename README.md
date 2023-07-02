@@ -1,5 +1,5 @@
 ## Introduction
-In this Lab, I will be going over how to set up a Service Desk environment to allow users to get hand on experience. How we will convert IP addresses into Static IP addresses We will  set up two VM's in Virtual box (one for the Domain Controller and one for the clientPC) this will allow us to access the DC from a seperate PC. 
+In this Lab, I will be going over how to set up a Service Desk environment to allow users to get hand on experience. How we will convert IP addresses into Static IP addresses. As well As how to set up two VM's in Virtual box (one for the Domain Controller and one for the clientPC) this will allow us to access the DC from a seperate PC. 
 After the lab is over you will having some knowledge in the following:
 * Virtual box
 * Active Directory - Adding/Deleting Users, Password Resets, Group/Role Policy
