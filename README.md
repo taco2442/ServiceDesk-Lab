@@ -1,5 +1,5 @@
 ## Introduction
-In this Lab, I will be going over how to set up a Service Desk environment to allow users to get hand on experience. How we will convert IP addresses into Static IP addresses. As well as how to set up two VM's in Virtual box (one for the Domain Controller and one for the clientPC) this will allow us to access the DC from a seperate PC. 
+In this Lab, I will be going over how to set up a Service Desk environment to allow users to get hand on experience. We will go over the set up portion of how we can have two VM's (Domain Controller and ClienPC) in Virtual box. We will also explore Active Directory in creating a better hierarchy for a new company and managing the new users associated with that. 
 <br>After the lab is over you will having some knowledge in the following: </br>
 * Virtual box
 * Active Directory - Adding/Deleting Users, Password Resets, Group/Role Policy
@@ -161,4 +161,52 @@ First you will need to change your IP address
 Congratulations you made it through setting up the environment. Now you can access your Domain Controller from a seperate VM. In the next section we will go over Active Directory and how we can start dealing with user passwords, Group/Role policy and other problems one might face in a help desk environment. 
 
 ## Active Directory
-to be con.
+<b>Reformatting a office</b>
+<br>Suppose we have a newer organization that we need to set up in Active Directory. This means that we will need to do a lot of overhead work to make sure that all new users have been added with the right groups and roles added accordingly. We might also encounter scenarios in this setting that would require us to change usernames because of name changes, disable/delete accounts of users that have left the company and change where people might be situated within the company. There is a lot to do in Active Directory and we will now be going over some of the problems that one might face.</br>
+<br>We will be going over: </br>
+* Account Lockouts/Password Reset
+* Creating new Group/Roles
+* Assinging users to new Organizational Units
+* Account Disable/Deletion
+* Username Changes
+
+<b>New Organizational Units</b>
+<br>People will be promoted, demoted or need access to different resources and we will need to know how to accomplish this task.</br>
+<br>First we must make 3 new Organizational Units to put our new users into.</br>
+* Right click the domain, under New, Add Organizational Unit
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/b9c174ed-60da-48a3-a6b8-483813362a7b)</br>
+We are going to name these new OU: HR, IT, ADMINISTRATOR. This will give us a better idea of how to section our staff.
+
+<br><b>Account Creation</b></br>
+<br>We need to create the accounts we will be applying these changes to.</br>
+* Right click Guest and select Copy
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/105aed01-b05d-42d2-b583-01f55414fbcd)</br>
+* Choose the name and password you want for the new user accounts
+Ex.
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/7d7a5428-0df8-47fa-8dd2-5ef1d1b7a3b5)</br>
+* Create 5 new user accounts
+* Right click the user accounts select move. HR will contain 1, IT will contain 2, Users will contain 2
+* Right click Administrator in Users and select Copy, After creation right click to select move and place the new account into the OU ADMINISTRATOR
+
+<br>![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/bc7bf7da-bcbf-4698-8589-951be0442109)</br>
+<br>Now even though most of the accounts only have basic user permissions we are much more equiped and organized to manage these accounts.</br>
+
+<b>Account Lockouts</b>
+<br>One of the most common problems is Account lockouts and having to reset passwords.</br>
+
+<b>Account Disable/Deletion</b>
+<br>People will eventually leave the company and we must know how to deal with their account in that scenario or have a need to disable the account.</br>
+
+<b>Username Changes</b>
+<br>Sometimes you might have to change the name of a user within the company.</br>
+
+<b>Creating new Group/Roles</b>
+<br>We will go over how to create new Group and Roles for better cybersecurity health.</br>
+
+
+
+
+
