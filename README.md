@@ -19,7 +19,7 @@ Links:
 <br>Once you download the MediaCreationTool and run it you will be prompted with: </br>
 ![image](https://github.com/taco2442/ServiceDesk-Lab/assets/58244861/94c1a4d8-f70b-4465-800f-1a03d63e1e78)
 
-<br>Click on create ISO and save both to folder you can easily access them.</br>
+<br>Click on create ISO and save both to a folder so you can easily access them.</br>
 
 ## Virtual Box
 We can now create the Virtual Machines our environment will take place in.
