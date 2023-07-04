@@ -1,5 +1,6 @@
 ## Introduction
-In this Lab, I will be going over how to set up a Service Desk environment to allow users to get hand on experience. We will go over the set up portion of how we can have two VM's (Domain Controller and ClienPC) in Virtual box. We will also explore Active Directory in creating a better hierarchy for a new company and managing the new users associated with that. 
+<br><b>This will be a tutorial on how to set up a lab using a Domain Controller and a ClientPC to become more familiar with Active Directory</b></br>
+In this Lab, I will be going over how to set up a Service Desk environment to allow users to get hand on experience. We will go over the set up portion of how we can have two VM's (Domain Controller and ClienPC) in Virtual box. We will also explore Active Directory in creating a better hierarchy for a new company and managing the new users associated with that.
 <br>After the lab is over you will having some knowledge in the following: </br>
 * Virtual box
 * Active Directory - Adding/Deleting Users, Password Resets, Group Policy
